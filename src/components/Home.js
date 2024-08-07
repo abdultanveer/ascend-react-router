@@ -1,7 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
+    const navigate = useNavigate()
   return (
-    <div>Home</div>
+    <>
+    <div>Home Page</div>
+    <button onClick={()=> navigate('order-summary')}> place order</button>
+    </>
   )
 }
