@@ -12,7 +12,8 @@ import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
 import React from "react";
 import Profile from "./components/Profile";
-import AuthProvider from "./components/AuthProvider";
+import AuthProvider from "./components/auth";
+import Login from "./components/Login";
 
 const LazyAbout = React.lazy(() => import("./components/About"));
 
@@ -37,7 +38,7 @@ function App() {
           ></Route>
           <Route path="/order-summary" element={<OrderSummary />}></Route>
           <Route path="*" element={<NoMatch />}></Route>
-
+          <Route path="login" element={<Login />} />
           <Route path="users" element={<Users />}>
             <Route path=":userId" element={<UserDetails />}></Route>
           </Route>

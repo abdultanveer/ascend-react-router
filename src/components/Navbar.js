@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {NavLink} from 'react-router-dom'
+import { useAuth } from './auth'
 
 
 function Navbar() {
-
+  const auth = useAuth()
   
 
   const navLinkStyles = (isActive)=>{
@@ -22,7 +23,12 @@ function Navbar() {
     <NavLink to='/products' style={navLinkStyles}>Products</NavLink>
 
     <NavLink to='/about' style={navLinkStyles}>About us</NavLink>
-
+{
+  !auth.user && (
+    <NavLink to='/login' style={navLinkStyles}>Products</NavLink>
+  )
+  
+}
     </nav>
   )
 }
