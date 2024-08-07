@@ -11,36 +11,43 @@ import NewProducts from "./components/NewProducts";
 import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
 import React from "react";
+import Profile from "./components/Profile";
+import AuthProvider from "./components/AuthProvider";
 
 const LazyAbout = React.lazy(() => import("./components/About"));
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Routes>
-        {/* add two more pages */}
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          {/* add two more pages */}
 
-        <Route path="/" element={<Home />}></Route>
-        <Route
-          path="/about"
-          element={
-            <React.Suspense fallback="loading...">
-              <LazyAbout />
-            </React.Suspense>
-          }
-        ></Route>
-        <Route path="/order-summary" element={<OrderSummary />}></Route>
-        <Route path="*" element={<NoMatch />}></Route>
-        <Route path="users" element={<Users />}>
-          <Route path=":userId" element={<UserDetails />}></Route>
-        </Route>
-        <Route path="/products" element={<Products />}>
-          <Route index element={<FeaturedProducts />} />
-          <Route path="featured" element={<FeaturedProducts />} />
-          <Route path="new" element={<NewProducts />} />
-        </Route>
-      </Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="profile" element={<Profile />} />
+
+          <Route
+            path="/about"
+            element={
+              <React.Suspense fallback="loading...">
+                <LazyAbout />
+              </React.Suspense>
+            }
+          ></Route>
+          <Route path="/order-summary" element={<OrderSummary />}></Route>
+          <Route path="*" element={<NoMatch />}></Route>
+
+          <Route path="users" element={<Users />}>
+            <Route path=":userId" element={<UserDetails />}></Route>
+          </Route>
+          <Route path="/products" element={<Products />}>
+            <Route index element={<FeaturedProducts />} />
+            <Route path="featured" element={<FeaturedProducts />} />
+            <Route path="new" element={<NewProducts />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
     </div>
   );
 }
