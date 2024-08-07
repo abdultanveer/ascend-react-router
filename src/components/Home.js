@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
     <div>Home Page</div>
-    <button onClick={()=> navigate('order-summary', {replace: true})}> place order</button>
+    <button onClick={()=> navigate('order-summary', { options: { replace: true } })}> place order</button>
     </>
   )
 }
