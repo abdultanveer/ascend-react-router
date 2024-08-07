@@ -5,10 +5,12 @@ import {NavLink} from 'react-router-dom'
 
 function Navbar() {
 
-  const navLinkStyles = ({isActive})=>{
+  
+
+  const navLinkStyles = (isActive)=>{
     return {
-      fontWeight: isActive ? 'bold':'normal',
-      textDecoration: isActive ? 'none':'underline'
+      fontWeight : isActive? 'bold':'normal',
+      textDecoration:isActive ? 'none': 'underline'
     }
   }
 
