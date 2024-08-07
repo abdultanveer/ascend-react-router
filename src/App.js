@@ -26,11 +26,6 @@ function App() {
         <Route path="users" element={<Users />}>
           <Route path=":userId" element={<UserDetails />}></Route>
         </Route>
-
-        {/* <Route path="users/1" element={<UserDetails />}></Route>
-        <Route path="users/2" element={<UserDetails />}></Route>
-        <Route path="users/3" element={<UserDetails />}></Route> */}
-
         <Route path="/products" element={<Products />}>
           <Route index element={<FeaturedProducts />} />
           <Route path="featured" element={<FeaturedProducts />} />
