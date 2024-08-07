@@ -8,8 +8,8 @@ export default function Products() {
         <input type="search" placeholder="search products" />
       </div>
       <nav>
-        <Link to="featured"> Featured products</Link>
-        <Link to="new"> New products</Link>
+        <Link to="/products/featured"> Featured products</Link>
+        <Link to="/products/new"> New products</Link>
       </nav>
       <Outlet />
     </>
