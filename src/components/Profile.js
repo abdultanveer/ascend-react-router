@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from './auth'
+import { useAuth } from './utils/auth'
 import { useNavigate } from 'react-router-dom'
 
 export default function Profile() {

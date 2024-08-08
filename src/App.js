@@ -12,8 +12,9 @@ import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
 import React from "react";
 import Profile from "./components/Profile";
-import {AuthProvider} from "./components/auth";
+import { AuthProvider } from "./components/utils/auth";
 import Login from "./components/Login";
+import { RequireAuth } from "./components/utils/RequireAuth";
 
 const LazyAbout = React.lazy(() => import("./components/About"));
 
@@ -26,7 +27,14 @@ function App() {
           {/* add two more pages */}
 
           <Route path="/" element={<Home />}></Route>
-          <Route path="profile" element={<Profile />} />
+          <Route
+            path="profile"
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+            }
+          />
 
           <Route
             path="/about"
