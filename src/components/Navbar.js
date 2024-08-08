@@ -6,7 +6,7 @@ import { useAuth } from './auth'
 
 function Navbar() {
   const auth = useAuth()
-  const [user,setUser] = useState(auth.user)
+  //const [user,setUser] = useState(auth.user)
 
   
 
@@ -25,8 +25,10 @@ function Navbar() {
     <NavLink to='/products' style={navLinkStyles}>Products</NavLink>
 
     <NavLink to='/about' style={navLinkStyles}>About us</NavLink>
+{!auth.user && (
+  <NavLink to='/login' style={navLinkStyles}>Login</NavLink>
 
-    <NavLink to='/login' style={navLinkStyles}>Products</NavLink>
+)}
   
   
 
