@@ -9,7 +9,7 @@ export default function Login() {
     const navigate = useNavigate()
 
 const handleLogin = () => {
-    auth.Login(user)
+    auth.login(user)
     navigate('/')
 }
 

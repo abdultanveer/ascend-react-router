@@ -12,7 +12,7 @@ import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
 import React from "react";
 import Profile from "./components/Profile";
-import AuthProvider from "./components/auth";
+import {AuthProvider} from "./components/auth";
 import Login from "./components/Login";
 
 const LazyAbout = React.lazy(() => import("./components/About"));
